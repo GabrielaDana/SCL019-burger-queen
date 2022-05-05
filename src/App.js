@@ -4,7 +4,7 @@ import TakeOrder from './components/TakeOrder.js';
 
 function App() {
   return (
-    <div className="App">
+    <div>
      <TakeOrder/>
     </div>
   );

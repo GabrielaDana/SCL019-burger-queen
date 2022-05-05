@@ -56,7 +56,7 @@
                 ]
             },
             {
-                "para beber": [
+                "bebestibles": [
                     {
                         "item": "Agua 500ml",
                         "valor": 3000
@@ -71,7 +71,7 @@
                     },
                     {
                         "item": "Bebida 750ml",
-                        "valor": 6000
+                        "valor": 5000
                     }
                 ]
             }
