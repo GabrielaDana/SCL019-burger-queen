@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from 'react'
+import { Order } from './Order.js'
 
-const SetItem = () => {
+
+const SetItem = ({ option, setOption }) => {
 
   const [cuenta, setCuenta] = useState(1)
   const count = () => {  
@@ -13,12 +15,27 @@ const SetItem = () => {
     else
     setCuenta(cuenta - 1)
   }
+  const [order, setOrder] = useState([])
+  const add = () => {
+    setOrder([
+          ...order,
+          {item: option[0], valor: option[1], cantidad: cuenta}
+    ])
+    setCuenta(1)
+    setOption('')
+  }
 
     return (
         <Fragment>
-            <p>contando hamburguesas: {cuenta}</p>
-            <button onClick={() => disCount()}>descontando</button>
-            <button onClick={() => count()}>contador</button>
+            <div className='setItem'
+            ><p>item: { option[0] } </p>
+            {/* <p>valor: { option[1] } </p> */}
+            <button className='smallButton' onClick={() => disCount()}>-</button>
+            <p className='count'> { cuenta } </p>
+            <button className='smallButton' onClick={() => count()}>+</button>
+            <button onClick={() => add()}> Agregar </button>
+            </div>
+            <Order order={order}></Order>
         </Fragment>
     )
 }
