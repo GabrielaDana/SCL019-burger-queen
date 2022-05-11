@@ -7,7 +7,7 @@ export const Order = ({ order, setOrder }) => {
         const arrayFilter = order.filter((item, index) => index !== i)
         setOrder(arrayFilter)
     };
-
+ 
     return (
         <Fragment>
             <div className='order'>
