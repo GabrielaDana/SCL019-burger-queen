@@ -1,9 +1,10 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { traerData } from '../firebase_config/firebase_functions.js'
 import SetItem from './SetItem.js'
+import image from '../img/2.png'
 
 const TakeOrder = () => {
-  const [data,setData] = useState([])
+  const [data, setData] = useState([])
   const [vLunch, setVLunch] = useState()
  
   const [tab, setTab] = useState(2)
@@ -21,9 +22,9 @@ const TakeOrder = () => {
       setVLunch()
     }
     if (tab === 2){
-      setVLunch(<> <button onClick={() => toggleTabs(2)}>Hamburguesas</button>
+      setVLunch(<div className='setLunch'> <button onClick={() => toggleTabs(2)}>Hamburguesas</button>
       <button onClick={() => toggleTabs(3)}> Acompañamientos</button>
-      <button onClick={() => toggleTabs(4)}> Para beber</button> </>)
+      <button onClick={() => toggleTabs(4)}> Para beber</button> </div>)
     }
     traerData().then(res => {
 
@@ -53,14 +54,17 @@ const TakeOrder = () => {
 
   return (
     <Fragment>
+      <img className='logo' alt='logo burger queen escrito con v, plant based' src={image}/>
       <h1>Vurger Queen</h1>
-      <button onClick={() => toggleTabs(1)} >Desayuno</button>
-      <button onClick={() => toggleTabs(2)} >Almuerzo y Cena</button>
+      <div className='select'>
+        <button  onClick={() => toggleTabs(1)} >Desayuno</button>
+        <button  onClick={() => toggleTabs(2)} >Almuerzo y Cena</button>
+      </div>
       <ul>
-        <li>
           { vLunch }
-          { menu }
-        </li>
+          <div className='menu'> 
+            { menu } 
+          </div>
       </ul>
       <SetItem  className='setItem' option={option} setOption={setOption}></SetItem>
     </Fragment>
