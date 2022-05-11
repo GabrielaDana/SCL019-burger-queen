@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
-*{
+
+* {
   list-style: none;
   padding-inline-start: 0;
 }
+
+:root {
+  --pinku: #F3B4DA;
+}
+
 body {
   background-color: black;
   color: white;
@@ -14,27 +20,35 @@ body {
 }
 
 button {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
   width: 187px;
   height: 46px;
-  background: #F3B4DA;
-  border: 1px solid #F3B4DA;
+  background: var(--pinku);
+  border: 1px solid var(--pinku);
   border-radius: 50px;
   margin: 20px;
-  outline: 2px solid #F3B4DA;
+  outline: 2px solid var(--pinku);
   outline-offset: 3px;
 }
 
-.smallButton1, .smallButton2 {
+.smallButton1,
+.smallButton2 {
   position: absolute;
   width: 40px;
   height: 40px;
   top: 71px;
+  text-align: center;
+  padding: 0;
 }
-.smallButton1{
+
+.smallButton1 {
   left: 30px;
 }
 
-.smallButton2{
+.smallButton2 {
   left: 144px;
 }
 
@@ -57,6 +71,7 @@ button {
   top: 495px;
   background: rgba(196, 196, 196, 0.19);
   border-radius: 13px;
+  overflow: scroll;
 }
 
 .count {
@@ -95,7 +110,7 @@ button {
   left: 0;
 }
 
-.add{
+.add {
   box-sizing: border-box;
   position: absolute;
   height: 46px;
@@ -104,46 +119,74 @@ button {
   top: 71px;
 }
 
-.logo{
-position: absolute;
-width: 250px;
-left: 483px;
-top: -10px;
+.logo {
+  position: absolute;
+  width: 250px;
+  left: 483px;
+  top: -10px;
 }
 
-.text, .price, .count{
+.text,
+.price,
+.count {
   font-weight: 600;
   font-size: 25px;
   line-height: 19px;
   color: white;
 }
-.text{
+
+.text {
   margin: 3% 0% 0% 5%;
 
 }
 
-.price{
+.price {
   text-align: end;
   margin: -3% 5% 0% 0%;
 }
 
-.list{
+.list {
   position: relative;
   left: 2%;
   right: 1%;
-  display: grid; 
-  grid-template-columns: 0.5fr 5fr 0.5fr 1.5fr 0.5fr; 
+  display: grid;
+  grid-template-columns: 0.5fr 5fr 0.3fr 0.2fr 0.9fr 0.5fr;
   font-weight: 600;
   font-size: 17px;
   line-height: 19px;
   color: white;
   gap: 0px 7px;
   max-width: 478px;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
 }
 
-.edit, .delete{
+.edit {
   cursor: pointer;
   font-weight: 400;
   font-size: 15px;
+}
+
+.delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: fit-content;
+  height: fit-content;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.icon{
+  width: 1.8rem;
+}
+
+.subtotal{
+  text-align: end;
 }

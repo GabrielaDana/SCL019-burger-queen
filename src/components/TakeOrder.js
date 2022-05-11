@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { traerData } from '../firebase_config/firebase_functions.js'
 import SetItem from './SetItem.js'
-import image from '../img/2.png'
+import image from '../assets/2.png'
 
 const TakeOrder = () => {
   const [data, setData] = useState([])
