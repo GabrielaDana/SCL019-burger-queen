@@ -7,12 +7,13 @@
 
 :root {
   --pinku: #F3B4DA;
+  --fonts: 'Josefin Sans', sans-serif;
 }
 
 body {
   background-color: black;
   color: white;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: var(--fonts);
   font-style: normal;
   font-weight: 400;
   font-size: 19px;
@@ -20,7 +21,7 @@ body {
 }
 
 button {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: var(--fonts);
   font-style: normal;
   font-weight: 400;
   font-size: 19px;
@@ -163,10 +164,12 @@ button {
 }
 
 .edit {
+  color: #FFFFFF;
   cursor: pointer;
   font-weight: 400;
   font-size: 15px;
 }
+
 
 .delete {
   display: flex;
@@ -189,4 +192,13 @@ button {
 
 .subtotal{
   text-align: end;
+}
+
+.editButton{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  margin: 0;
 }

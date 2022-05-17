@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
+
+:root {
+  --pinku: #F3B4DA;
+  --fonts: 'Josefin Sans', sans-serif;
+}
+
+.smallButton1,
+.smallButton2 {
+  background: var(--pinku);
+  color: black;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 71px;
+  text-align: center;
+  padding: 0;
+}
+
+.smallButton1 {
+  left: 30px;
+}
+
+.smallButton2 {
+  left: 144px;
+}
+
+.count {
+  box-sizing: border-box;
+  display: flex;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 103px;
+  top: 63px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #FFFFFF;
+}
+
+.setItem {
+  position: absolute;
+  width: 503px;
+  height: 156px;
+  left: 228px;
+  top: 327px;
+  background: rgba(196, 196, 196, 0.19);
+  border-radius: 13px;
+}
+
+.text,
+.price,
+.count {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 19px;
+  color: white;
+}
+
+.text {
+  margin: 3% 0% 0% 5%;
+
+}
+
+.price {
+  text-align: end;
+  margin: -3% 5% 0% 0%;
+}
+
+.add {
+  box-sizing: border-box;
+  position: absolute;
+  height: 46px;
+  width: 187px;
+  left: 237px;
+  top: 71px;
+  background: var(--pinku);
+  color: black;
+}
+
+.add:active{
+  background: transparent;
+  color: var(--pinku);
+}

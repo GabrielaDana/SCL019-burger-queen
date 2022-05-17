@@ -1,6 +1,5 @@
 import React from 'react';
-import './App.css';
-import TakeOrder from './components/TakeOrder.js';
+import TakeOrder from './components/TakeOrder.jsx';
 
 
 function App() {
@@ -9,6 +8,6 @@ function App() {
      <TakeOrder/>
     </div>
   );
-}
+} 
 
 export default App;

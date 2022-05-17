@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
+
+:root {
+  --pinku: #F3B4DA;
+  --fonts: 'Josefin Sans', sans-serif;
+}
+
+.order {
+    box-sizing: border-box;
+    position: absolute;
+    width: 502px;
+    height: 463px;
+    left: 229px;
+    top: 495px;
+    background: rgba(196, 196, 196, 0.19);
+    border-radius: 13px 13px 0px 0px;
+    overflow: scroll;
+  }
+
+  /* .ul :nth-child(6n+1){
+    background-color: blanchedalmond;
+  } */
+
+.text,
+.price,
+.count {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 19px;
+  color: white;
+}
+
+.text {
+  margin: 3% 0% 0% 5%;
+}
+
+.list {
+  position: relative;
+  left: 2%;
+  right: 1%;
+  display: grid;
+  grid-template-columns: 0.5fr 5fr 0.3fr 0.2fr 0.9fr 0.5fr;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 19px;
+  color: white;
+  gap: 0px 7px;
+  max-width: 478px;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  background-color: transparent;
+}
+
+.edit {
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 15px;
+  }
+
+  .editButton{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+  }
+
+  .editButton:focus{
+    background: transparent;
+  }
+
+  .icon{
+    width: 1.8rem;
+  }
+  
+  .subtotal{
+    text-align: end;
+  }
+
+  .delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  .total{
+    display: flex;
+    background: rgba(196, 196, 196, 0.19);
+    position: absolute;
+    width: 502px;
+    height: 82px;
+    left: 229px;
+    top: 960px;
+    border-radius: 0px 0px 13px 13px;
+    align-items: center;
+    justify-content:space-between;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 19px;
+    color: white;
+  }
+
+  .totalText{
+    margin: 0% 0% 0% 5%;
+  }
+

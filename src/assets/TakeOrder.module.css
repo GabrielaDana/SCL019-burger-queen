@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
+
+* {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+:root {
+  --pinku: #F3B4DA;
+  --fonts: 'Josefin Sans', sans-serif;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: var(--fonts);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 19px;
+}
+
+button {
+  font-family: var(--fonts);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  width: 187px;
+  height: 46px;
+  background: transparent;
+  border: 1px solid var(--pinku);
+  border-radius: 50px;
+  margin: 20px;
+  outline: 2px solid var(--pinku);
+  outline-offset: 3px;
+  color: var(--pinku);
+}
+
+.active{
+  background: var(--pinku);
+  color: black;
+}
+
+button:focus {
+  background: var(--pinku);
+  color: black;
+}
+
+.setLunch {
+    position: absolute;
+    width: 744px;
+    height: 76px;
+    left: 0px;
+    top: 233px;
+  }
+
+  .logo {
+    position: absolute;
+    width: 250px;
+    left: 483px;
+    top: -10px;
+  }
+
+  .select {
+    position: absolute;
+    width: 600px;
+    height: 81px;
+    top: 155px;
+  }
+
+  .menu {
+    position: absolute;
+    width: 228px;
+    height: 685px;
+    top: 372px;
+    left: 0;
+  }
+
+  .setItem {
+    position: absolute;
+    width: 503px;
+    height: 156px;
+    left: 228px;
+    top: 327px;
+    background: rgba(196, 196, 196, 0.19);
+    border-radius: 13px;
+  }
