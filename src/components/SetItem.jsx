@@ -3,7 +3,7 @@ import { Order } from './Order.jsx'
 import styles from '../assets/SetItem.module.css'
 
 
-const SetItem = ({ option, setOption }) => {
+const SetItem = ({ option, setOption, burgers, setBurgers }) => {
 
     const [cuenta, setCuenta] = useState(1)
     const [order, setOrder] = useState([])
@@ -26,6 +26,16 @@ const SetItem = ({ option, setOption }) => {
             return
         }
 
+        if (!burgers.find(burger => burger.index === '0' || burger.index === '1')){
+            console.log('Elige el tamaño de la hamburgesa')
+            return
+        }
+
+        if (!burgers.find(burger => burger.index === '2' || burger.index === '3' || burger.index === '4')){
+            console.log('Selecciona la proteína de la hamburguesa')
+            return
+        }
+
         if (cuenta === 0) {
             setOption([])
             setCuenta(1)
@@ -45,6 +55,7 @@ const SetItem = ({ option, setOption }) => {
             ])
             setCuenta(1)
             setOption([])
+            setBurgers([])
     }
 
     const [editMode, setEditMode] = useState(false)

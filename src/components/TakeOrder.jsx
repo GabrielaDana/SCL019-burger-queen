@@ -13,22 +13,69 @@ const TakeOrder = () => {
   };
 
   const [option, setOption] = useState([])
-  const [burger, setBurger] = useState([])
-  const [arrayBurger, setArrayBurger] = useState([])
+  const [burgers, setBurgers] = useState([])
 
   const order = (e) => {
     if (tab === 2) {
       const item = e.target.value.split(',')
-      console.log(item);
-      setBurger([
-        ...burger,
-        { item: item[0], valor: item[1], index: item[2] }
-      ]);
+      let edit = []
+
+      const exist = burgers.find(burger => burger.index === item[2])
+      if (!exist) {
+        switch (item[2]) {
+
+          case '0':
+            edit = (burgers.filter((burger) => burger.index !== '1'))
+            setBurgers(([...edit, { item: item[0], valor: item[1], index: item[2] }]).sort((a, b) => a.index - b.index))
+            break;
+
+          case '1':
+            edit = (burgers.filter((burger) => burger.index !== '0'))
+            setBurgers(([...edit, { item: item[0], valor: item[1], index: item[2] }]).sort((a, b) => a.index - b.index))
+            break;
+
+          case '2':
+            edit = (burgers.filter((burger) => burger.index !== '3' && burger.index !== '4'))
+            setBurgers(([...edit, { item: item[0], valor: item[1], index: item[2] }]).sort((a, b) => a.index - b.index))
+            break;
+
+          case '3':
+            edit = (burgers.filter((burger) => burger.index !== '2' && burger.index !== '4'))
+            setBurgers(([...edit, { item: item[0], valor: item[1], index: item[2] }]).sort((a, b) => a.index - b.index))
+            break;
+
+          case '4':
+            edit = (burgers.filter((burger) => burger.index !== '2' && burger.index !== '3'))
+            setBurgers(([...edit, { item: item[0], valor: item[1], index: item[2] }]).sort((a, b) => a.index - b.index))
+            break;
+
+          default:
+            setBurgers(([...burgers, { item: item[0], valor: item[1], index: item[2] }]).sort((a, b) => a.index - b.index))
+            break;
+        }
+      }
+
+      else {
+        setBurgers(burgers.filter((burger) => burger.index !== item[2]).sort((a, b) => a.index - b.index));
+
+      }
       return
     }
-    
-    setOption(e.target.value.split(','))
+
+    setOption(e.target.value.split(','));
   }
+
+  useEffect(() => {
+    const product = burgers.map(burger => burger.item);
+    const price = burgers.reduce(
+      (previousValue, currentValue) => previousValue + Number(currentValue.valor),
+      0
+    );
+    setOption([product.toString(), price])
+
+  }, [burgers])
+
+
   useEffect(() => {
 
     traerData().then(res => {
@@ -46,68 +93,14 @@ const TakeOrder = () => {
 
         case 4:
           setData(res.almuerzo[2].bebestibles);
-        break;
+          break;
 
         default:
-        break;
+          break;
       }
     })
 
   }, [tab])
-
-  useEffect(() => {
-  
-    if (burger.length > 1) {
-
-      switch (burger[burger.length-1].index) {
-
-        case '0':
-          setBurger(burger.filter((element) => element.index !== '1')) 
-          break;
-
-        case '1':
-          setBurger(burger.filter((element) => element.index !== '0'))
-          break;
-        
-        case '2':
-          setBurger(burger.filter((element) => element.index !== '3' && element.index !== '4'))
-          break;
-
-        case '3':
-          setBurger(burger.filter((element) => element.index !== '2' && element.index !== '4'))
-          break;
-
-        case '4':
-          setBurger(burger.filter((element) => element.index !== '2' && element.index !== '3'))
-          break;
-
-        case '5':
-          if (burger.filter((element) => element.index === '5').length === 2){
-            setBurger(burger.filter(element => element.index !== '5')) 
-          }
-          break;
-
-        case '6':
-          if(burger.filter((element) => element.index === '6').length === 2){
-            setBurger(burger.filter((element) => element.index !== '6'))
-          } 
-          break;
-        
-        default:
-          console.log('default')
-          break;
-      }
-      
-    }
-    let set = new Set( burger.map(JSON.stringify) )
-    let unique = Array.from(set).map(JSON.parse);
-    let ordered = unique.sort((a,b)=> a.index - b.index )
-    return setArrayBurger(ordered)
-
-  }, [burger])
-  
-
- 
 
   const vLunch = (
     <div className={styles.setLunch}>
@@ -137,10 +130,7 @@ const TakeOrder = () => {
           {menu}
         </div>
       </ul>
-      <div>
-         {arrayBurger.map((bur, index) =>(<li key={index}>{bur.item}</li>))}
-      </div>
-      <SetItem className={styles.setItem} option={option} setOption={setOption}></SetItem>
+      <SetItem className={styles.setItem} option={option} setOption={setOption} burgers={burgers} setBurgers={setBurgers}></SetItem>
     </Fragment>
   )
 }
