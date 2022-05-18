@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
+
+:root {
+  --pinku: #F3B4DA;
+  --fonts: 'Josefin Sans', sans-serif;
+}
+
+.name{
+font-family: var(--fonts);
+}

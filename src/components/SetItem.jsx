@@ -35,7 +35,7 @@ const SetItem = ({ option, setOption }) => {
         const exist = order.find(x => x.item === option[0])
         if (exist){
             setOrder(
-                order.map(x => x.item === option[0] ? {item: exist.item, valor: exist.valor , cantidad: exist.cantidad + cuenta} : x)
+                order.map(x => x.item === option[0] ? {...exist, cantidad: exist.cantidad + cuenta} : x)
             )
         }
         else

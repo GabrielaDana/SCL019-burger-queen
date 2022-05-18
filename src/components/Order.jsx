@@ -1,9 +1,11 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import icon from '../assets/iconDelete.svg'
 import styles from '../assets/Order.module.css'
+import { NameOrder}  from './NameOrder.jsx'
 
 export const Order = ({ order, setOrder, setOption, setCuenta, setEditMode, setIndex}) => {
     
+    const [name, setName] = useState('')
     const deleteItem = (i) => {
         setOrder(order.filter((item, index) => index !== i))
     };
@@ -22,7 +24,9 @@ export const Order = ({ order, setOrder, setOption, setCuenta, setEditMode, setI
     
     return (
         <Fragment>
+            <NameOrder name={name} setName={setName}></NameOrder>
             <div className={styles.order}>
+                <h2>{name}</h2>
                 <h2 className={styles.text}> Pedido: </h2>
                 <ul className={styles.ul}>
                     {order.map((item, index) => {

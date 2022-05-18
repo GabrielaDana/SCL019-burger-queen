@@ -7,6 +7,7 @@ import styles from '../assets/TakeOrder.module.css'
 const TakeOrder = () => {
   const [data, setData] = useState([])
   const [tab, setTab] = useState(2)
+
   const toggleTabs = (i) => {
     setTab(i)
   };
@@ -18,70 +19,16 @@ const TakeOrder = () => {
   const order = (e) => {
     if (tab === 2) {
       const item = e.target.value.split(',')
-
+      console.log(item);
       setBurger([
         ...burger,
         { item: item[0], valor: item[1], index: item[2] }
       ]);
       return
     }
-
+    
     setOption(e.target.value.split(','))
   }
-
-  useEffect(() => {
-  
-    if (burger.length >= 1) {
-
-      switch (burger[burger.length-1].index) {
-
-        case '0':
-          setBurger(burger.filter((element) => element.index !== '1')) 
-          break;
-
-        case '1':
-          setBurger(burger.filter((element) => element.index !== '0'))
-          break;
-        
-        case '2':
-          setBurger(burger.filter((element) => element.index !== '3' && element.index !== '4'))
-          break;
-
-        case '3':
-          setBurger(burger.filter((element) => element.index !== '2' && element.index !== '4'))
-          break;
-
-        case '4':
-          setBurger(burger.filter((element) => element.index !== '2' && element.index !== '3'))
-          break;
-
-        case '5':
-          if(burger.filter((element) => element.index === '5').length > 1){
-            setBurger(burger.filter((element) => element.index !== '5'))
-          } 
-          break;
-
-        case '6':
-           if(burger.filter((element) => element.index === '6').length > 1){
-            setBurger(burger.filter((element) => element.index !== '6'))
-          } 
-          break;
-        
-        default:
-          console.log('default')
-          break;
-      }
-    }
-    let set = new Set( burger.map(JSON.stringify) )
-    let unique = Array.from(set).map(JSON.parse);
-    setArrayBurger(unique)
-
-    let ordered = unique.sort((a,b)=> a.index - b.index )
-    setArrayBurger(ordered)
-    
-  }, [burger])
-  
-
   useEffect(() => {
 
     traerData().then(res => {
@@ -108,6 +55,60 @@ const TakeOrder = () => {
 
   }, [tab])
 
+  useEffect(() => {
+  
+    if (burger.length > 1) {
+
+      switch (burger[burger.length-1].index) {
+
+        case '0':
+          setBurger(burger.filter((element) => element.index !== '1')) 
+          break;
+
+        case '1':
+          setBurger(burger.filter((element) => element.index !== '0'))
+          break;
+        
+        case '2':
+          setBurger(burger.filter((element) => element.index !== '3' && element.index !== '4'))
+          break;
+
+        case '3':
+          setBurger(burger.filter((element) => element.index !== '2' && element.index !== '4'))
+          break;
+
+        case '4':
+          setBurger(burger.filter((element) => element.index !== '2' && element.index !== '3'))
+          break;
+
+        case '5':
+          if (burger.filter((element) => element.index === '5').length === 2){
+            setBurger(burger.filter(element => element.index !== '5')) 
+          }
+          break;
+
+        case '6':
+          if(burger.filter((element) => element.index === '6').length === 2){
+            setBurger(burger.filter((element) => element.index !== '6'))
+          } 
+          break;
+        
+        default:
+          console.log('default')
+          break;
+      }
+      
+    }
+    let set = new Set( burger.map(JSON.stringify) )
+    let unique = Array.from(set).map(JSON.parse);
+    let ordered = unique.sort((a,b)=> a.index - b.index )
+    return setArrayBurger(ordered)
+
+  }, [burger])
+  
+
+ 
+
   const vLunch = (
     <div className={styles.setLunch}>
       <button onClick={() => toggleTabs(2)} className={tab === 2 ? styles.active : undefined}>Hamburguesas</button>
@@ -116,10 +117,10 @@ const TakeOrder = () => {
     </div>
   )
 
-  const lunch = tab === 2 || tab === 3 || tab === 4 ? vLunch : undefined;
+  const lunch = (tab === 2 || tab === 3 || tab === 4) && vLunch;
 
   const menu = data.map((element, index) => {
-    return (<button onClick={(e) => order(e)} key={index} value={[element.item, element.valor, index]}>{element.item} {element.valor}</button>);
+    return (<button onClick={(e) => order(e)} key={index} value={[element.item, element.valor, index]}> {element.item} {element.valor} </button>);
   })
 
   return (
