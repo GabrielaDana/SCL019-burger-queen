@@ -2,7 +2,6 @@
 
 * {
   list-style: none;
-  padding-inline-start: 0;
 }
 
 :root {
@@ -39,11 +38,19 @@ button {
 .active{
   background: var(--pinku);
   color: black;
+  box-shadow:
+  0 0 7px rgb(215 117 176 / 30%),
+  0 0 24px rgb(215 117 176 / 30%), 
+  0 0 37px rgb(215 117 176 / 30%)
 }
 
 button:focus {
   background: var(--pinku);
   color: black;
+  box-shadow:
+  0 0 7px rgb(215 117 176 / 20%),
+  0 0 14px rgb(215 117 176 / 20%), 
+  0 0 28px rgb(215 117 176 / 20%)
 }
 
 .setLunch {
@@ -56,9 +63,9 @@ button:focus {
 
   .logo {
     position: absolute;
-    width: 250px;
-    left: 483px;
-    top: -10px;
+    width: 246px;
+    left: 484px;
+    top: -20px;
   }
 
   .select {
@@ -84,4 +91,13 @@ button:focus {
     top: 327px;
     background: rgba(196, 196, 196, 0.19);
     border-radius: 13px;
+  }
+
+  .item,
+  .valor{
+    margin: 0;
+  }
+
+  .valor{
+    font-size: 15px;
   }

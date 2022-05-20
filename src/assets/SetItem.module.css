@@ -32,7 +32,7 @@
   width: 48px;
   height: 48px;
   left: 103px;
-  top: 63px;
+  top: 87px;
   align-items: center;
   justify-content: center;
   border: 1px solid #FFFFFF;
@@ -58,13 +58,16 @@
 }
 
 .text {
-  margin: 3% 0% 0% 5%;
-
+  width: 70%;
+  height: 50%;
+  margin: 5% 0% 0% 5%;
+  
 }
 
 .price {
-  text-align: end;
-  margin: -3% 5% 0% 0%;
+  top: 4.5vh;
+  left: 63vh;
+  position: absolute;
 }
 
 .add {
@@ -81,4 +84,31 @@
 .add:active{
   background: transparent;
   color: var(--pinku);
+}
+
+.warning{
+  position: absolute;
+  top: 9vh;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--pinku);
+  text-shadow:
+  0 0 7px rgba(215, 117, 176, .7),
+  0 0 70px rgba(215, 117, 176, .7),
+  0 0 140px rgba(215, 117, 176, .7);
+}
+
+.textAlert{
+  position: absolute;
+  font-size: 25px;
+  top: 6vh;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--pinku);
+  text-shadow:
+  0 0 7px rgba(215, 117, 176, .7),
+  0 0 70px rgba(215, 117, 176, .7),
+  0 0 140px rgba(215, 117, 176, .7);
 }

@@ -7,13 +7,15 @@ import styles from '../assets/TakeOrder.module.css'
 const TakeOrder = () => {
   const [data, setData] = useState([])
   const [tab, setTab] = useState(2)
-
-  const toggleTabs = (i) => {
-    setTab(i)
-  };
-
   const [option, setOption] = useState([])
   const [burgers, setBurgers] = useState([])
+  
+  const toggleTabs = (i) => {
+    setTab(i)
+    setBurgers([])
+    setOption([])
+  };
+
 
   const order = (e) => {
     if (tab === 2) {
@@ -53,25 +55,33 @@ const TakeOrder = () => {
             setBurgers(([...burgers, { item: item[0], valor: item[1], index: item[2] }]).sort((a, b) => a.index - b.index))
             break;
         }
+        return
       }
 
       else {
+        if (burgers.length === 1) {
+          setOption([])
+        }
         setBurgers(burgers.filter((burger) => burger.index !== item[2]).sort((a, b) => a.index - b.index));
 
       }
       return
     }
-
+    setBurgers([])
     setOption(e.target.value.split(','));
+   
   }
 
   useEffect(() => {
-    const product = burgers.map(burger => burger.item);
-    const price = burgers.reduce(
-      (previousValue, currentValue) => previousValue + Number(currentValue.valor),
-      0
-    );
-    setOption([product.toString(), price])
+
+    if(burgers.length >= 1){
+      const product = burgers.map(burger => burger.item);
+      const price = burgers.reduce(
+        (previousValue, currentValue) => previousValue + Number(currentValue.valor),
+        0
+      );
+      setOption([product.toString(), price])
+    }
 
   }, [burgers])
 
@@ -113,13 +123,12 @@ const TakeOrder = () => {
   const lunch = (tab === 2 || tab === 3 || tab === 4) && vLunch;
 
   const menu = data.map((element, index) => {
-    return (<button onClick={(e) => order(e)} key={index} value={[element.item, element.valor, index]}> {element.item} {element.valor} </button>);
+    return (<button onClick={(e) => order(e)} key={index} value={[element.item, element.valor, index]}> {element.item} {element.valor}</button>);
   })
 
   return (
     <Fragment>
       <img className={styles.logo} alt='logo burger queen escrito con v, plant based' src={image} />
-      <h1>Vurger Queen</h1>
       <div className={styles.select}>
         <button className={tab === 1 ? styles.active : undefined} onClick={() => toggleTabs(1)} >Desayuno</button>
         <button className={tab === 2 || tab === 3 || tab === 4 ? styles.active : undefined} onClick={() => toggleTabs(2)} >Almuerzo y Cena</button>

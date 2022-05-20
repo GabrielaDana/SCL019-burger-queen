@@ -6,5 +6,57 @@
 }
 
 .name{
-font-family: var(--fonts);
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 404px;
+  height: 45px;
+  left: 21px;
+  top: 22px;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.tableBox{
+  display: flex;
+  width: 50px;
+  height: 45px;
+  background: rgba(196, 196, 196, 0.2);
+  border-radius: 10px;
+  font-family: var(--fonts);
+  border: none;
+  margin: 0;
+  font-weight: 600;
+  font-size: 19px;
+  outline: none;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type=text]{
+  position: absolute;
+  width: 404px;
+  height: 45px;
+  left: 21px;
+  top: 85px;
+  background: rgba(196, 196, 196, 0.2);
+  font-family: var(--fonts);
+  font-size: 27px;
+  border: transparent;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+    text-shadow:
+          0 0 2px rgba(255, 255, 255, .2),
+          0 0 10px rgba(255, 255, 255, .2);
+}
+
+.on{
+  background-color: var(--pinku);
+  color: black;
+  box-shadow:
+  0 0 7px rgb(215 117 176 / 30%),
+  0 0 24px rgb(215 117 176 / 30%), 
+  0 0 37px rgb(215 117 176 / 30%)
 }

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { Order } from './Order.jsx'
 import styles from '../assets/SetItem.module.css'
 
@@ -7,38 +7,37 @@ const SetItem = ({ option, setOption, burgers, setBurgers }) => {
 
     const [cuenta, setCuenta] = useState(1)
     const [order, setOrder] = useState([])
+    const [warning, setWarning] = useState('')
+    const [editMode, setEditMode] = useState(false)
+    const [index, setIndex] = useState()
     
     const count = () => {
         setCuenta(cuenta + 1)
     }
 
     const disCount = () => {
-        if (cuenta === 0) {
-            setCuenta(0)
+        if (editMode === false) {
+            cuenta === 1 ? setCuenta(1) : setCuenta(cuenta -1)
         }
-        else
-            setCuenta(cuenta - 1)
+        else 
+        cuenta === 0 ? setCuenta(0) : setCuenta(cuenta - 1)
     }
 
     const add = () => {
+        if (burgers.length >= 1){
+           if (!burgers.find(burger => burger.index === '0' || burger.index === '1')){
+            setWarning('Elige el tamaño de la hamburgesa')
+            return
+            }
+
+            if (!burgers.find(burger => burger.index === '2' || burger.index === '3' || burger.index === '4')){
+             setWarning('Selecciona la proteína de la hamburguesa')
+             return
+            }
+        }
+        
         if (option.length === 0) {
             console.log('ingresa algo para pedir');
-            return
-        }
-
-        if (!burgers.find(burger => burger.index === '0' || burger.index === '1')){
-            console.log('Elige el tamaño de la hamburgesa')
-            return
-        }
-
-        if (!burgers.find(burger => burger.index === '2' || burger.index === '3' || burger.index === '4')){
-            console.log('Selecciona la proteína de la hamburguesa')
-            return
-        }
-
-        if (cuenta === 0) {
-            setOption([])
-            setCuenta(1)
             return
         }
 
@@ -53,13 +52,11 @@ const SetItem = ({ option, setOption, burgers, setBurgers }) => {
              ...order,
                 { item: option[0], valor: option[1], cantidad: cuenta }
             ])
+
             setCuenta(1)
             setOption([])
             setBurgers([])
     }
-
-    const [editMode, setEditMode] = useState(false)
-    const [index, setIndex] = useState()
     
     const edit = () => {
         cuenta === 0 ? order.splice(index, 1) : order.splice(index, 1, ({item:option[0], valor:option[1], cantidad:cuenta}))
@@ -69,12 +66,27 @@ const SetItem = ({ option, setOption, burgers, setBurgers }) => {
     }
 
     const price = (option[1]) * (cuenta)
+    
+  useEffect(() => {
+    warning !== '' && setTimeout(() => {
+        setWarning('')
+    }, 2000); 
+  }, [warning])
+
+  const viewText = (
+    <p className={styles.textAlert}>Selecciona algo del menú</p>
+  )
+  const viewOption = (
+    <p className={styles.text}> {option[0]} </p>
+  )
+  
 
     return (
         <Fragment>
             <div className={styles.setItem}>
-                <p className={styles.text}> Item: </p>
-                <p className={styles.text}> {option[0]} </p>
+                <p className={styles.warning}>{ warning }</p>
+                {option.length >= 1 ? viewOption : viewText}
+                {/* <p className={styles.text}> {option.length >= 1 ? option[0] : "Selecciona algo del menú"} </p> */}
                 <p className={styles.price}> {!isNaN(price) && '$' + price} </p>
                 <button className={styles.smallButton1} onClick={() => disCount()}>-</button>
                 <p className={styles.count}> {cuenta} </p>

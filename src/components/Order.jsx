@@ -6,6 +6,7 @@ import { NameOrder}  from './NameOrder.jsx'
 export const Order = ({ order, setOrder, setOption, setCuenta, setEditMode, setIndex}) => {
     
     const [name, setName] = useState('')
+    const [tables, setTables] = useState()
     const deleteItem = (i) => {
         setOrder(order.filter((item, index) => index !== i))
     };
@@ -24,9 +25,10 @@ export const Order = ({ order, setOrder, setOption, setCuenta, setEditMode, setI
     
     return (
         <Fragment>
-            <NameOrder name={name} setName={setName}></NameOrder>
+            <NameOrder name={name} setName={setName} tables={tables} setTables={setTables}></NameOrder>
             <div className={styles.order}>
-                <h2>{name}</h2>
+                {/* <h2>{name}</h2>
+                <h3>{tables}</h3> */}
                 <h2 className={styles.text}> Pedido: </h2>
                 <ul className={styles.ul}>
                     {order.map((item, index) => {
