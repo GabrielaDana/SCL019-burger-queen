@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
+
+:root {
+  --pinku: #F3B4DA;
+  --fonts: 'Josefin Sans', sans-serif;
+}
+
+.logo{
+    position: absolute;
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20%;
+}
+
+.btnPedido,
+.btnCocina{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 45%;
+    height: 9%;
+    font-size: 38px;
+}
+.btnPedido{
+    top: 74%;
+}
+
+.btnCocina{
+    top: 61%;
+}
+
+button:focus {
+    background: var(--pinku);
+    color: black;
+    box-shadow:
+    0 0 7px rgb(215 117 176 / 20%),
+    0 0 14px rgb(215 117 176 / 20%), 
+    0 0 28px rgb(215 117 176 / 20%);
+  }

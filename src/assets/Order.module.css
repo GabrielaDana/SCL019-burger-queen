@@ -19,11 +19,15 @@
 
 .text,
 .price,
-.count {
+.count,
+.text1 {
   font-weight: 600;
   font-size: 25px;
   line-height: 19px;
   color: white;
+}
+.text1{
+  margin: -4% 0% 0% 79%;
 }
 
 .text {

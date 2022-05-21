@@ -10,6 +10,8 @@ const SetItem = ({ option, setOption, burgers, setBurgers }) => {
     const [warning, setWarning] = useState('')
     const [editMode, setEditMode] = useState(false)
     const [index, setIndex] = useState()
+    const [name, setName] = useState('')
+    const [tables, setTables] = useState(0)
     
     const count = () => {
         setCuenta(cuenta + 1)
@@ -24,6 +26,11 @@ const SetItem = ({ option, setOption, burgers, setBurgers }) => {
     }
 
     const add = () => {
+        if (name === '' || tables === 0){
+            alert('Ingresa el nombre del cliente y número de mesa')
+            return
+        }
+
         if (burgers.length >= 1){
            if (!burgers.find(burger => burger.index === '0' || burger.index === '1')){
             setWarning('Elige el tamaño de la hamburgesa')
@@ -100,7 +107,7 @@ const SetItem = ({ option, setOption, burgers, setBurgers }) => {
                 }
                 
             </div>
-            <Order order={order} setOrder={setOrder} setOption={setOption} setCuenta={setCuenta} setEditMode={setEditMode} setIndex={setIndex}></Order>
+            <Order order={order} setOrder={setOrder} setOption={setOption} setCuenta={setCuenta} setEditMode={setEditMode} setIndex={setIndex} name={name} setName={setName} tables={tables} setTables={setTables} ></Order>
         </Fragment>
     )
 }

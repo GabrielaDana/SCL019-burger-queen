@@ -1,15 +1,16 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { traerData } from '../firebase_config/firebase_functions.js'
+import {Link} from 'react-router-dom'
 import SetItem from './SetItem.jsx'
 import image from '../assets/2.png'
 import styles from '../assets/TakeOrder.module.css'
 
-const TakeOrder = () => {
+export const TakeOrder = () => {
   const [data, setData] = useState([])
   const [tab, setTab] = useState(2)
   const [option, setOption] = useState([])
   const [burgers, setBurgers] = useState([])
-  
+
   const toggleTabs = (i) => {
     setTab(i)
     setBurgers([])
@@ -128,7 +129,7 @@ const TakeOrder = () => {
 
   return (
     <Fragment>
-      <img className={styles.logo} alt='logo burger queen escrito con v, plant based' src={image} />
+      <Link to='/'><img className={styles.logo} alt='logo burger queen escrito con v, plant based' src={image} /></Link>
       <div className={styles.select}>
         <button className={tab === 1 ? styles.active : undefined} onClick={() => toggleTabs(1)} >Desayuno</button>
         <button className={tab === 2 || tab === 3 || tab === 4 ? styles.active : undefined} onClick={() => toggleTabs(2)} >Almuerzo y Cena</button>
@@ -143,5 +144,3 @@ const TakeOrder = () => {
     </Fragment>
   )
 }
-
-export default TakeOrder

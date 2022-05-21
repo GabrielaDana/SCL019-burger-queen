@@ -1,12 +1,11 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
 import icon from '../assets/iconDelete.svg'
 import styles from '../assets/Order.module.css'
+import { sendData } from '../firebase_config/firebase_functions.js'
 import { NameOrder}  from './NameOrder.jsx'
 
-export const Order = ({ order, setOrder, setOption, setCuenta, setEditMode, setIndex}) => {
+export const Order = ({ order, setOrder, setOption, setCuenta, setEditMode, setIndex, name, setName, tables, setTables}) => {
     
-    const [name, setName] = useState('')
-    const [tables, setTables] = useState()
     const deleteItem = (i) => {
         setOrder(order.filter((item, index) => index !== i))
     };
@@ -22,6 +21,13 @@ export const Order = ({ order, setOrder, setOption, setCuenta, setEditMode, setI
         (previousValue, currentValue) => previousValue + currentValue.valor * currentValue.cantidad,
         0 
     );
+
+    const sendOrder = () => {
+        if (order.length >= 1){
+            sendData(name, tables, order, total)
+        }
+        else alert('Ingresa tu pedido para enviar a cocina')
+    }
     
     return (
         <Fragment>
@@ -29,7 +35,8 @@ export const Order = ({ order, setOrder, setOption, setCuenta, setEditMode, setI
             <div className={styles.order}>
                 {/* <h2>{name}</h2>
                 <h3>{tables}</h3> */}
-                <h2 className={styles.text}> Pedido: </h2>
+                <p className={styles.text}> Cliente: {name} </p>
+                <p className={styles.text1}> Mesa: {tables} </p>
                 <ul className={styles.ul}>
                     {order.map((item, index) => {
                         return (
@@ -51,7 +58,7 @@ export const Order = ({ order, setOrder, setOption, setCuenta, setEditMode, setI
             </div>
             <div className={styles.total}>
                 <p className={styles.totalText}>Total: $ {total}</p>
-                <button>Enviar a cocina</button>
+                <button onClick={()=> sendOrder()}>Enviar a cocina</button>
             </div>
         </Fragment>
     )

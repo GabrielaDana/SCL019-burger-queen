@@ -60,13 +60,14 @@
 .text {
   width: 70%;
   height: 50%;
-  margin: 5% 0% 0% 5%;
-  
+  top: 30px;
+  margin: 0% 0% 0% 5%;
+  position: absolute;
 }
 
 .price {
-  top: 4.5vh;
-  left: 63vh;
+  top: 30px;
+  left: 400px;
   position: absolute;
 }
 
@@ -88,7 +89,7 @@
 
 .warning{
   position: absolute;
-  top: 9vh;
+  top: 57px;
   left: 0;
   right: 0;
   text-align: center;
@@ -102,7 +103,7 @@
 .textAlert{
   position: absolute;
   font-size: 25px;
-  top: 6vh;
+  top: 35px;
   left: 0;
   right: 0;
   text-align: center;
