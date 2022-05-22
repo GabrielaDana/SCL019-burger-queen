@@ -25,6 +25,10 @@ export const Order = ({ order, setOrder, setOption, setCuenta, setEditMode, setI
     const sendOrder = () => {
         if (order.length >= 1){
             sendData(name, tables, order, total)
+            setName('')
+            setTables(0)
+            setOrder([])
+            alert('El pedido fue enviado a cocina')
         }
         else alert('Ingresa tu pedido para enviar a cocina')
     }

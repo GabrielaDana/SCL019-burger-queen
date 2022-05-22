@@ -3,6 +3,7 @@
 :root {
   --pinku: #F3B4DA;
   --fonts: 'Josefin Sans', sans-serif;
+  --green1: #CEEB87;
 }
 
 .logo{
@@ -32,9 +33,22 @@
 
 .btnCocina{
     top: 61%;
+    border: 1px solid var(--green1);
+    outline: 2px solid var(--green1);
+    outline-offset: 3px;
+    color: var(--green1);
 }
 
-button:focus {
+.btnCocina:focus{
+    background: var(--green1);
+    color: black;
+    box-shadow:
+    0 0 7px rgb(215 117 176 / 20%),
+    0 0 14px rgb(215 117 176 / 20%), 
+    0 0 28px rgb(215 117 176 / 20%);
+}
+
+.btnPedido:focus {
     background: var(--pinku);
     color: black;
     box-shadow:

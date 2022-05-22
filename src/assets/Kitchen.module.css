@@ -1,8 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --pinku: #F3B4DA;
     --fonts: 'Josefin Sans', sans-serif;
+    --greenBtn: #CEEB87;;
+}
+
+body{
+    font-weight: 700;
+}
+
+.logo{
+    position: absolute;
+    width: 246px;
+    left: 463px;
+    top: -5px;
+}
+
+.datos{
+    overflow: scroll;
+    width: 300px;
+    height: 179px;
 }
 
 .orders {
@@ -18,20 +41,110 @@
 }
 
 .order{
-    border: 3px solid var(--pinku);
+    /* border: 3px solid var(--pinku); */
+    border: 3px;
     border-radius: 10px;
     margin: 2%;
     width: 300px;
     height: 300px;
+    background: rgba(196, 196, 196, 0.19);
+    padding: 11px;
 }
 
 .buttonStatus{
-    width: 100%;
-    height: 20%;
-    /* position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    top: 250px; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px 15px 0px;
+}
+
+.items{
+    display: grid;
+    grid-template-columns: 0.3fr 0.3fr 4fr;
+    margin: 0px 0px 5px 5px;
+}
+
+.statusColor1,
+.statusColor2{
+    display: flex;
+    justify-content: center;
+    margin: 15px 0px 5px 0px;
+}
+
+.statusColor1{
+    color:var(--pinku);
+}
+
+.statusColor2{
+    color: var(--greenBtn);
+}
+
+.cantidad{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    border: 1px solid var(--greenBtn);
+    outline: 1px solid var(--greenBtn);
+    color: var(--greenBtn);
+}
+
+.btn:focus{
+    color: black;
+    background-color: var(--greenBtn);
+    box-shadow:
+    0 0 7px rgb(117 215 128 / 20%),
+    0 0 14px rgb(117 215 128 / 20%), 
+    0 0 28px rgb(117 215 128 / 20%)
+}
+
+.pedido{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 381px;
+    background: rgba(196, 196, 196, 0.19);
+    border-radius: 10px;
+    position: absolute;
+    left: 35px;
+    top: 23px;
+    font-size: 53px;
+    font-weight: 800;
+    font-family: var(--fonts);
+    color: var(--greenBtn);
+    text-shadow: 
+    0 0 7px rgb(117 215 128 / 70%),
+    0 0 70px rgb(117 215 128 / 70%),
+    0 0 140px rgb(117 215 128 / 70%);
+}
+
+.statusPend,
+.statusPrep{
+    display: flex;
+    align-items: center;
+    text-align: start;
+    font-size: 30px;
+    border-radius: 10px;
+    margin: 0 0 0 5%;
+    width: 357px;
+    height: 50px;
+    background: rgba(196, 196, 196, 0.19);
+    position: absolute;
+    padding-left: 22px;
+}
+
+.statusPend{
+    top: 100px;
+    color: var(--pinku);
+}
+
+.statusPrep{
+    top: 157px;
+    color: var(--greenBtn);
 }

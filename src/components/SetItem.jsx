@@ -77,7 +77,7 @@ const SetItem = ({ option, setOption, burgers, setBurgers }) => {
   useEffect(() => {
     warning !== '' && setTimeout(() => {
         setWarning('')
-    }, 2000); 
+    }, 2500); 
   }, [warning])
 
   const viewText = (

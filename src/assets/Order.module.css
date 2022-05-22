@@ -3,6 +3,7 @@
 :root {
   --pinku: #F3B4DA;
   --fonts: 'Josefin Sans', sans-serif;
+  --greenBtn: #CEEB87;;
 }
 
 .order {
@@ -27,11 +28,13 @@
   color: white;
 }
 .text1{
-  margin: -4% 0% 0% 79%;
+  margin: -10% 0% 4% 79%;
+  color: var(--greenBtn);
 }
 
 .text {
-  margin: 3% 0% 0% 5%;
+  margin: 4% 0% 6% 5%;
+  color: var(--greenBtn);
 }
 
 .list {
