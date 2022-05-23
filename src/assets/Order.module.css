@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,700&display=swap');
 
 :root {
   --pinku: #F3B4DA;
@@ -129,4 +129,58 @@ p{
   ul{
     padding: 0;
   }
+  @media screen and (min-width: 834px) {
+
+    .order{
+      top: 525px;
+      height: 514px;
+      width: 530px;
+      left: 275px;
+    }
+
+    .total{
+      width: 530px;
+      height: 115px;
+      left: 275px;
+      top: 1042px;
+      font-size: 36px;
+    }
+
+.text,
+.price,
+.count,
+.text1 {
+  font-size: 31px;
+}
+
+.text1{
+  margin: -10% 0% 4% 75%;
+}
+
+.list{
+left: 2%;
+max-width: 513px;
+margin-bottom: 3%;
+font-size: 21px;
+}
+
+}
+
+@media screen and (min-width: 1194px) {
+  .order{
+    width: 53%;
+    left: 44%;
+    height: 55%;
+    top: 27%;
+  }
+
+  .total{
+    width: 53%;
+    left: 44%;
+    top: 83%;
+  }
+
+ 
+
+}
 

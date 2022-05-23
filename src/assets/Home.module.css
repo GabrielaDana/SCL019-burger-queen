@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,700&display=swap');
 
 :root {
-  --pinku: #F3B4DA;
-  --fonts: 'Josefin Sans', sans-serif;
-  --green1: #CEEB87;
+    --pinku: #F3B4DA;
+    --fonts: 'Josefin Sans', sans-serif;
+    --green1: #CEEB87;
 }
 
-.logo{
+.logo {
     position: absolute;
     width: 50%;
     left: 0;
@@ -17,7 +17,7 @@
 }
 
 .btnPedido,
-.btnCocina{
+.btnCocina {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -27,11 +27,12 @@
     height: 9%;
     font-size: 38px;
 }
-.btnPedido{
+
+.btnPedido {
     top: 74%;
 }
 
-.btnCocina{
+.btnCocina {
     top: 61%;
     border: 1px solid var(--green1);
     outline: 2px solid var(--green1);
@@ -39,20 +40,34 @@
     color: var(--green1);
 }
 
-.btnCocina:focus{
+.btnCocina:focus {
     background: var(--green1);
     color: black;
     box-shadow:
-    0 0 7px rgb(215 117 176 / 20%),
-    0 0 14px rgb(215 117 176 / 20%), 
-    0 0 28px rgb(215 117 176 / 20%);
+        0 0 7px rgb(215 117 176 / 20%),
+        0 0 14px rgb(215 117 176 / 20%),
+        0 0 28px rgb(215 117 176 / 20%);
 }
 
 .btnPedido:focus {
     background: var(--pinku);
     color: black;
     box-shadow:
-    0 0 7px rgb(215 117 176 / 20%),
-    0 0 14px rgb(215 117 176 / 20%), 
-    0 0 28px rgb(215 117 176 / 20%);
-  }
+        0 0 7px rgb(215 117 176 / 20%),
+        0 0 14px rgb(215 117 176 / 20%),
+        0 0 28px rgb(215 117 176 / 20%);
+}
+
+@media screen and (min-width: 1194px) {
+    .logo {
+        width: 35%;
+        top: 9%;
+    }
+}
+
+@media screen and (min-width: 1029px) {
+    .logo {
+        width: 30%;
+        top: 0;
+    }
+}

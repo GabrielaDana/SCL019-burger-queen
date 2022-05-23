@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,700&display=swap');
 :root {
   --pinku: #F3B4DA;
   --fonts: 'Josefin Sans', sans-serif;
@@ -112,4 +111,42 @@
   0 0 7px rgba(215, 117, 176, .7),
   0 0 70px rgba(215, 117, 176, .7),
   0 0 140px rgba(215, 117, 176, .7);
+}
+
+@media screen and (min-width: 834px) {
+
+  .setItem{
+    width: 530px;
+    height: 165px;
+    left: 275px;
+    top: 348px;
+  }
+  .text{
+    margin: 0% 0% 0% 3%;
+    width: 72%;
+  }
+
+  .price{
+    left: 83%;
+  }
+  .add{
+    left: 261px;
+    top: 78px;
+  }
+  .smallButton1,
+  .smallButton2{
+    top: 78px;
+  }
+  .count{
+    top: 95px;
+  }
+}
+
+@media screen and (min-width: 1194px) {
+  .setItem{
+    width: 53%;
+    left: 44%;
+    top: 5%;
+  }
+
 }
