@@ -18,7 +18,7 @@ function App() {
             <Route path="/takeOrder" element={<TakeOrder />}/>
             <Route path="/kitchen" element={<Kitchen />}/>
             <Route path="/" element={<Home />}/>
-            <Route path="*" element={<Navigate to='/' />}/>
+            <Route path="*" element={<Navigate path='/' />}/>
           </Routes>
       </Router>
     </div>
