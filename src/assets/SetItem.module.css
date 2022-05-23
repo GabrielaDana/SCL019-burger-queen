@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,700&display=swap');
+:root {
+  --pinku: #F3B4DA;
+  --fonts: 'Josefin Sans', sans-serif;
+}
+
+.smallButton1,
+.smallButton2 {
+  background: var(--pinku);
+  color: black;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 71px;
+  text-align: center;
+  padding: 0;
+}
+
+.smallButton1 {
+  left: 30px;
+}
+
+.smallButton2 {
+  left: 144px;
+}
+
+.count {
+  box-sizing: border-box;
+  display: flex;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 103px;
+  top: 87px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #FFFFFF;
+}
+
+.setItem {
+  position: absolute;
+  width: 503px;
+  height: 156px;
+  left: 228px;
+  top: 327px;
+  background: rgba(196, 196, 196, 0.19);
+  border-radius: 13px;
+}
+
+.text,
+.price,
+.count {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 19px;
+  color: white;
+}
+
+.text {
+  width: 70%;
+  height: 50%;
+  top: 30px;
+  margin: 0% 0% 0% 5%;
+  position: absolute;
+}
+
+.price {
+  top: 30px;
+  left: 400px;
+  position: absolute;
+}
+
+.add {
+  box-sizing: border-box;
+  position: absolute;
+  height: 46px;
+  width: 187px;
+  left: 237px;
+  top: 71px;
+  background: var(--pinku);
+  color: black;
+}
+
+.add:active{
+  background: transparent;
+  color: var(--pinku);
+}
+
+.warning{
+  position: absolute;
+  top: 57px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--pinku);
+  text-shadow:
+  0 0 7px rgba(215, 117, 176, .7),
+  0 0 70px rgba(215, 117, 176, .7),
+  0 0 140px rgba(215, 117, 176, .7);
+}
+
+.textAlert{
+  position: absolute;
+  font-size: 25px;
+  top: 35px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--pinku);
+  text-shadow:
+  0 0 7px rgba(215, 117, 176, .7),
+  0 0 70px rgba(215, 117, 176, .7),
+  0 0 140px rgba(215, 117, 176, .7);
+}
+
+@media screen and (min-width: 834px) {
+
+  .setItem{
+    width: 530px;
+    height: 165px;
+    left: 275px;
+    top: 348px;
+  }
+  .text{
+    margin: 0% 0% 0% 3%;
+    width: 72%;
+  }
+
+  .price{
+    left: 83%;
+  }
+  .add{
+    left: 261px;
+    top: 78px;
+  }
+  .smallButton1,
+  .smallButton2{
+    top: 78px;
+  }
+  .count{
+    top: 95px;
+  }
+}
+
+@media screen and (min-width: 1194px) {
+  .setItem{
+    width: 53%;
+    left: 44%;
+    top: 5%;
+  }
+
+}

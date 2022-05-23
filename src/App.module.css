@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
+
+* {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+:root {
+  --pinku: #F3B4DA;
+  --fonts: 'Josefin Sans', sans-serif;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: var(--fonts);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 19px;
+}
+
+button {
+  font-family: var(--fonts);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  width: 187px;
+  height: 46px;
+  background: var(--pinku);
+  border: 1px solid var(--pinku);
+  border-radius: 50px;
+  margin: 20px;
+  outline: 2px solid var(--pinku);
+  outline-offset: 3px;
+}
+
+.smallButton1,
+.smallButton2 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 71px;
+  text-align: center;
+  padding: 0;
+}
+
+.smallButton1 {
+  left: 30px;
+}
+
+.smallButton2 {
+  left: 144px;
+}
+
+.setItem {
+  position: absolute;
+  width: 503px;
+  height: 156px;
+  left: 228px;
+  top: 327px;
+  background: rgba(196, 196, 196, 0.19);
+  border-radius: 13px;
+}
+
+.order {
+  box-sizing: border-box;
+  position: absolute;
+  width: 502px;
+  height: 530px;
+  left: 229px;
+  top: 495px;
+  background: rgba(196, 196, 196, 0.19);
+  border-radius: 13px;
+  overflow: scroll;
+}
+
+.count {
+  box-sizing: border-box;
+  display: flex;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 103px;
+  top: 63px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #FFFFFF;
+}
+
+.select {
+  position: absolute;
+  width: 600px;
+  height: 81px;
+  top: 155px;
+}
+
+.setLunch {
+  position: absolute;
+  width: 744px;
+  height: 76px;
+  left: 0px;
+  top: 233px;
+}
+
+.menu {
+  position: absolute;
+  width: 228px;
+  height: 685px;
+  top: 372px;
+  left: 0;
+}
+
+.add {
+  box-sizing: border-box;
+  position: absolute;
+  height: 46px;
+  width: 187px;
+  left: 237px;
+  top: 71px;
+}
+
+.logo {
+  position: absolute;
+  width: 250px;
+  left: 483px;
+  top: -10px;
+}
+
+.text,
+.price,
+.count {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 19px;
+  color: white;
+}
+
+.text {
+  margin: 3% 0% 0% 5%;
+
+}
+
+.price {
+  text-align: end;
+  margin: -3% 5% 0% 0%;
+}
+
+.list {
+  position: relative;
+  left: 2%;
+  right: 1%;
+  display: grid;
+  grid-template-columns: 0.5fr 5fr 0.3fr 0.2fr 0.9fr 0.5fr;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 19px;
+  color: white;
+  gap: 0px 7px;
+  max-width: 478px;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+}
+
+.edit {
+  color: #FFFFFF;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+
+.delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: fit-content;
+  height: fit-content;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.icon{
+  width: 1.8rem;
+}
+
+.subtotal{
+  text-align: end;
+}
+
+.editButton{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  margin: 0;
+}

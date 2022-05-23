@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,700&display=swap');
+:root {
+  --pinku: #F3B4DA;
+  --fonts: 'Josefin Sans', sans-serif;
+}
+
+.name{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 404px;
+  height: 45px;
+  left: 21px;
+  top: 22px;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.tableBox{
+  display: flex;
+  width: 50px;
+  height: 45px;
+  background: rgba(196, 196, 196, 0.2);
+  border-radius: 10px;
+  font-family: var(--fonts);
+  border: none;
+  margin: 0;
+  font-weight: 600;
+  font-size: 19px;
+  outline: none;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type=text]{
+  position: absolute;
+  width: 404px;
+  height: 45px;
+  left: 21px;
+  top: 85px;
+  background: rgba(196, 196, 196, 0.2);
+  font-family: var(--fonts);
+  font-size: 27px;
+  border: transparent;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+    text-shadow:
+          0 0 2px rgba(255, 255, 255, .2),
+          0 0 10px rgba(255, 255, 255, .2);
+}
+
+.on{
+  background-color: var(--pinku);
+  color: black;
+  box-shadow:
+  0 0 7px rgb(215 117 176 / 30%),
+  0 0 24px rgb(215 117 176 / 30%), 
+  0 0 37px rgb(215 117 176 / 30%)
+}
+
+@media screen and (min-width: 834px) {
+
+  input[type=text],
+  .name{
+    height: 55px;
+    width: 480px;
+    left: 31px;
+  }
+}
+
+@media screen and (min-width: 1194px) {
+ 
+  .name{
+    left: 27%;
+    width: 20%;
+    flex-wrap: wrap;
+    width: 15%;
+  }
+
+  .tableBox{
+    margin-bottom: 3%;
+  }
+
+  input[type=text]{
+    top: 15%;
+  }
+}

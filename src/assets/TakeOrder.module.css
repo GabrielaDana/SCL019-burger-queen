@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,700&display=swap');
+
+* {
+  list-style: none;
+}
+
+:root {
+  --pinku: #F3B4DA;
+  --fonts: 'Josefin Sans', sans-serif;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: var(--fonts);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 19px;
+}
+
+button {
+  font-family: var(--fonts);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  width: 187px;
+  height: 46px;
+  background: transparent;
+  border: 1px solid var(--pinku);
+  border-radius: 50px;
+  margin: 20px;
+  outline: 2px solid var(--pinku);
+  outline-offset: 3px;
+  color: var(--pinku);
+}
+
+.active{
+  background: var(--pinku);
+  color: black;
+  box-shadow:
+  0 0 7px rgb(215 117 176 / 30%),
+  0 0 24px rgb(215 117 176 / 30%), 
+  0 0 37px rgb(215 117 176 / 30%)
+}
+
+button:focus {
+  background: var(--pinku);
+  color: black;
+  box-shadow:
+  0 0 7px rgb(215 117 176 / 20%),
+  0 0 14px rgb(215 117 176 / 20%), 
+  0 0 28px rgb(215 117 176 / 20%)
+}
+
+.setLunch {
+    position: absolute;
+    width: 744px;
+    height: 76px;
+    left: 0px;
+    top: 233px;
+  }
+
+  .logo {
+    position: absolute;
+    width: 246px;
+    left: 481px;
+    top: -5px;
+  }
+
+  .select {
+    position: absolute;
+    width: 600px;
+    height: 81px;
+    top: 155px;
+  }
+
+  .menu {
+    position: absolute;
+    width: 228px;
+    height: 685px;
+    top: 372px;
+    left: 0;
+  }
+
+  .setItem {
+    position: absolute;
+    width: 503px;
+    height: 156px;
+    left: 228px;
+    top: 327px;
+    background: rgba(196, 196, 196, 0.19);
+    border-radius: 13px;
+  }
+
+  .item,
+  .valor{
+    margin: 0;
+  }
+
+  .valor{
+    font-size: 15px;
+  }
+
+@media screen and (min-width: 834px) {
+  button{
+    width: 13rem;
+    height: 4rem;
+    font-size: 22px;
+  }
+
+  .order{
+    width: 530px;
+    height: 544px;
+    left: 275px;
+  }
+  
+  .menu{
+    left: 15px;
+  }
+
+  .select button,
+  .setLunch button{
+    margin: 18px 42px 0px 20px;
+  }
+
+  .setLunch{
+    top: 244px;
+    left: 15px;
+    width: 810px;
+  }
+
+  .select{
+    top: 149px;
+    left: 15px;
+  }
+
+  .logo{
+    left: 546px;
+  }
+}
+
+@media screen and (min-width: 1194px) {
+  .logo{
+    width: 10%;
+    left: 10%;
+    top: 0%;
+  }
+  .setItem{
+    width: 53%;
+    left: 44%;
+    top: 348px;
+  }
+
+  .setLunch{
+    left: 1;
+    width: 10%;
+    top: 54%;
+  }
+
+  .select{
+    left: 1;
+    width: 40%;
+    top: 22%
+  }
+
+  .menu{
+    left: 23%;
+    width: 30%;
+    top: 22%
+  }
+
+  .menu button{
+    margin: 22px 37px 1px 14px;
+  }
+}

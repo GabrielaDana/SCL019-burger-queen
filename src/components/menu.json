@@ -1,0 +1,80 @@
+{
+    "menu": {
+        "desayuno": [
+            {
+                "item": "Café americano",
+                "valor": 2500
+            },
+            {
+                "item": "Café con leche",
+                "valor": 3900
+            },
+            {
+                "item": "Sandwich queso palta",
+                "valor": 4500
+            },
+            {
+                "item": "Jugo de frutas natural",
+                "valor": 4000
+            }
+        ],
+        "almuerzo/Cena": [
+            {
+                "hamburguesas": {
+                    "simple": {
+                        "valor": 7000,
+                        "proteina": [
+                            "legumbres",
+                            "soya",
+                            "quínoa"
+                        ]
+                    },
+                    "doble": {
+                        "valor": 10000,
+                        "proteina": [
+                            "legumbres",
+                            "soya",
+                            "quínoa"
+                        ]
+                    },
+                    "extras": [
+                        "queso",
+                        "pepinillos"
+                    ]
+                }
+            },
+            {
+                "acompañamientos": [
+                    {
+                        "item":"papas fritas",
+                        "valor": 3000
+                    },
+                    {
+                        "item":"Aros de cebolla",
+                        "valor": 3000
+                    }
+                ]
+            },
+            {
+                "bebestibles": [
+                    {
+                        "item": "Agua 500ml",
+                        "valor": 3000
+                    },
+                    {
+                        "item":"Agua 750ml",
+                        "valor": 4000
+                    },
+                    {
+                        "item": "Bebida 500ml",
+                        "valor": 4000
+                    },
+                    {
+                        "item": "Bebida 750ml",
+                        "valor": 5000
+                    }
+                ]
+            }
+        ]
+    }
+}
