@@ -38,7 +38,7 @@
       "last 1 safari version"
     ]
   },
-  "description": "## Índice",
+  "description": "Interfaz para tomar pedidos en un restaurante y enviarlos a cocina de manera ordenada",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -49,5 +49,5 @@
   "bugs": {
     "url": "https://github.com/GabrielaDana/SCL019-burger-queen/issues"
   },
-  "homepage": "https://github.com/GabrielaDana/SCL019-burger-queen#readme"
+  "homepage": "https://github.com/GabrielaDana/SCL019-burger-queen/"
 }
