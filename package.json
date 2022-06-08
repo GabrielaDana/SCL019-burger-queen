@@ -49,5 +49,7 @@
   "bugs": {
     "url": "https://github.com/GabrielaDana/SCL019-burger-queen/issues"
   },
-  "homepage": "https://github.com/GabrielaDana/SCL019-burger-queen/"
+  "devDependencies": {
+    "terser-brunch": "^4.1.0"
+  }
 }
