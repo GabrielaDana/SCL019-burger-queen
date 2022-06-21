@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,700&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
@@ -7,21 +8,22 @@
 :root {
     --pinku: #F3B4DA;
     --fonts: 'Josefin Sans', sans-serif;
-    --greenBtn: #CEEB87;;
+    --greenBtn: #CEEB87;
+    ;
 }
 
-body{
+body {
     font-weight: 700;
 }
 
-.logo{
+.logo {
     position: absolute;
     width: 246px;
     left: 58%;
     top: -5px;
 }
 
-.datos{
+.datos {
     overflow: scroll;
     width: 95%;
     height: 179px;
@@ -37,7 +39,7 @@ body{
     width: 100%;
 }
 
-.order{
+.order {
     /* border: 3px solid var(--pinku); */
     border: 3px;
     border-radius: 10px;
@@ -48,19 +50,19 @@ body{
     padding: 11px;
 }
 
-.buttonStatus{
+.buttonStatus {
     display: flex;
     justify-content: space-around;
 }
 
-.title{
+.title {
     display: flex;
     justify-content: center;
     margin: 10px 0px 15px 0px;
     font-size: 23px;
 }
 
-.items{
+.items {
     display: grid;
     grid-template-columns: 0.3fr 0.3fr 4fr;
     margin: 0px 0px 11px 5px;
@@ -68,42 +70,45 @@ body{
 }
 
 .statusColor1,
-.statusColor2{
+.statusColor2 {
     display: flex;
     justify-content: center;
     margin: 15px 0px 5px 0px;
     font-size: 25px;
 }
 
-.statusColor1{
-    color:var(--pinku);
+.statusColor1 {
+    color: var(--pinku);
 }
 
-.statusColor2{
+.statusColor2 {
     color: var(--greenBtn);
 }
 
-.cantidad{
+.cantidad {
     display: flex;
     justify-content: center;
 }
 
-.btn{
-    border: 1px solid var(--greenBtn);
-    outline: 1px solid var(--greenBtn);
+.btn {
+    border: 2px solid var(--greenBtn);
+    /* outline: 1px solid var(--greenBtn); */
     color: var(--greenBtn);
+    box-shadow:
+        0 0 0 3px black,
+        0 0 0 5px var(--greenBtn);
 }
 
-.btn:focus{
+.btn:focus {
     color: black;
     background-color: var(--greenBtn);
     box-shadow:
-    0 0 7px rgb(117 215 128 / 20%),
-    0 0 14px rgb(117 215 128 / 20%), 
-    0 0 28px rgb(117 215 128 / 20%)
+        0 0 7px rgb(117 215 128 / 20%),
+        0 0 14px rgb(117 215 128 / 20%),
+        0 0 28px rgb(117 215 128 / 20%)
 }
 
-.pedido{
+.pedido {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -119,14 +124,14 @@ body{
     font-weight: 800;
     font-family: var(--fonts);
     color: var(--greenBtn);
-    text-shadow: 
-    0 0 7px rgb(117 215 128 / 70%),
-    0 0 70px rgb(117 215 128 / 70%),
-    0 0 140px rgb(117 215 128 / 70%);
+    text-shadow:
+        0 0 7px rgb(117 215 128 / 70%),
+        0 0 70px rgb(117 215 128 / 70%),
+        0 0 140px rgb(117 215 128 / 70%);
 }
 
 .statusPend,
-.statusPrep{
+.statusPrep {
     display: flex;
     align-items: center;
     text-align: start;
@@ -140,39 +145,41 @@ body{
     padding-left: 22px;
 }
 
-.statusPend{
+.statusPend {
     top: 100px;
     color: var(--pinku);
 }
 
-.statusPrep{
+.statusPrep {
     top: 157px;
     color: var(--greenBtn);
 }
 
 @media screen and (min-width: 834px) {
+
     .statusColor1,
-    .statusColor2{
+    .statusColor2 {
         font-size: 28px;
     }
-    
-  }
+
+}
 
 @media screen and (min-width: 1194px) {
+
     .statusColor1,
-    .statusColor2{
+    .statusColor2 {
         font-size: 28px;
     }
 
     .pedido,
     .statusPend,
-    .statusPrep{
+    .statusPrep {
         width: 43%;
         padding-left: 2%;
     }
 
-    .logo{
+    .logo {
         left: 64%;
     }
-    
+
 }

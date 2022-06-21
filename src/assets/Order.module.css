@@ -67,11 +67,11 @@ p{
 
   .editButton{
     background-color: transparent;
-    outline: none;
     border: none;
     width: fit-content;
     height: fit-content;
     margin: 0;
+    box-shadow: none;
   }
 
   .icon{
@@ -95,6 +95,7 @@ p{
     height: fit-content;
     margin-bottom: 5px;
     cursor: pointer;
+    box-shadow: none;
   }
 
   .editButton:focus,
@@ -166,21 +167,34 @@ font-size: 21px;
 
 }
 
-@media screen and (min-width: 1194px) {
+@media screen and (min-width: 1180px) {
   .order{
     width: 53%;
     left: 44%;
     height: 55%;
-    top: 27%;
+    top: 33%;
   }
 
   .total{
     width: 53%;
     left: 44%;
+    top: 89%;
+  }
+}
+@media screen and (min-width: 1180px) {
+  .order{
+    top: 27%;
+  }
+  .total{
     top: 83%;
   }
-
- 
-
 }
 
+@media screen and (min-width: 1280px) {
+  .order{
+    top: 33%;
+  }
+  .total{
+    top: 89%;
+  }
+}

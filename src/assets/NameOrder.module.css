@@ -27,10 +27,15 @@
   margin: 0;
   font-weight: 600;
   font-size: 19px;
-  outline: none;
+  /* outline: none; */
   color: white;
   justify-content: center;
   align-items: center;
+  box-shadow: none;
+}
+
+.tableBox:focus{
+  box-shadow: none;
 }
 
 input[type=text]{
@@ -70,11 +75,11 @@ input[type=text]{
   }
 }
 
-@media screen and (min-width: 1194px) {
+@media screen and (min-width: 1180px) {
  
   .name{
     left: 27%;
-    width: 20%;
+    /* width: 20%; */
     flex-wrap: wrap;
     width: 15%;
   }
@@ -84,6 +89,31 @@ input[type=text]{
   }
 
   input[type=text]{
-    top: 15%;
+    top: 20%;
+    width: 508px;
+  }
+}
+@media screen and (min-width: 1194px) {
+ 
+  .name{
+    left: 27%;
+    flex-wrap: wrap;
+    width: 15%;
+  }
+
+  .tableBox{
+    margin-bottom: 3%;
+  }
+
+  input[type=text]{
+    top: 16%;
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+
+  input[type=text]{
+    top: 21%;
   }
 }

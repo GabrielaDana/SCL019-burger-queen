@@ -27,30 +27,37 @@ button {
   width: 187px;
   height: 46px;
   background: transparent;
-  border: 1px solid var(--pinku);
+  border: 2px solid var(--pinku);
   border-radius: 50px;
   margin: 20px;
-  outline: 2px solid var(--pinku);
-  outline-offset: 3px;
+  /* outline: 2px solid var(--pinku); */
+  /* outline-offset: 3px; */
   color: var(--pinku);
+  box-shadow:
+  0 0 0 3px black,
+  0 0 0 5px var(--pinku);
 }
 
 .active{
   background: var(--pinku);
   color: black;
   box-shadow:
-  0 0 7px rgb(215 117 176 / 30%),
-  0 0 24px rgb(215 117 176 / 30%), 
-  0 0 37px rgb(215 117 176 / 30%)
+  0 0 0 3px black,
+  0 0 0 5px var(--pinku),
+  0 0 10px rgb(215 117 176 / 30%),
+  0 0 27px rgb(215 117 176 / 30%), 
+  0 0 40px rgb(215 117 176 / 30%);
 }
 
 button:focus {
   background: var(--pinku);
   color: black;
   box-shadow:
-  0 0 7px rgb(215 117 176 / 20%),
-  0 0 14px rgb(215 117 176 / 20%), 
-  0 0 28px rgb(215 117 176 / 20%)
+  0 0 0 3px black,
+  0 0 0 5px var(--pinku),
+  0 0 10px rgb(215 117 176 / 20%),
+  0 0 17px rgb(215 117 176 / 20%), 
+  0 0 30px rgb(215 117 176 / 20%);
 }
 
 .setLunch {
@@ -153,24 +160,53 @@ button:focus {
   }
 
   .setLunch{
+    top: 57%;
+    width: 20%;
+  }
+
+  .select{
+    top: 25%;
+    width: 20%;
+  }
+
+  .menu{
+    top: 25%;
+    left: 22%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .logo{
+    width: 10%;
+    left: 10%;
+    top: 0%;
+  }
+  .setItem{
+    width: 53%;
+    left: 44%;
+    top: 348px;
+  }
+
+  .setLunch{
     left: 1;
     width: 10%;
-    top: 54%;
+    top: 58%;
   }
 
   .select{
     left: 1;
-    width: 40%;
-    top: 22%
+    width: 10%;
+    top: 30%
   }
 
   .menu{
     left: 23%;
     width: 30%;
-    top: 22%
+    top: 30%
   }
 
   .menu button{
     margin: 22px 37px 1px 14px;
   }
 }
+

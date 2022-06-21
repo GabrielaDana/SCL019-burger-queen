@@ -31,8 +31,9 @@ button {
   border: 1px solid var(--pinku);
   border-radius: 50px;
   margin: 20px;
-  outline: 2px solid var(--pinku);
-  outline-offset: 3px;
+  /* outline: 2px solid var(--pinku); */
+  /* outline-offset: 3px; */
+
 }
 
 .smallButton1,
